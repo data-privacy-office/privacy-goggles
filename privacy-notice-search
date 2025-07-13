@@ -1,5 +1,5 @@
 ! name: Privacy Policy Finder
-! description: Prioritizes actual privacy policies and data protection documents while filtering out guides, articles, and general information
+! description: Prioritizes actual privacy policies and data protection documents based on URL patterns, filtering out guides and tutorials
 ! public: true
 ! author: Privacy Policy Hunter
 ! avatar: #2d5aa0
@@ -49,42 +49,16 @@ site=*.fr/confidentialite*$boost=10
 */gdpr*.pdf$boost=10
 
 ! ==============================================================================
-! DISCARD: General Information, Guides, and Non-Policy Content
+! DISCARD: Non-Policy Content Patterns
 ! ==============================================================================
 
-! Educational and informational sites
-site=wikipedia.org$discard
-site=*.wikipedia.org$discard
-site=wikimedia.org$discard
-site=fandom.com$discard
+! Social platforms (non-policy content)
+*/posts/*$discard
+*/comments/*$discard
+*/discussions/*$discard
+*/forums/*$discard
 
-! Blog platforms and content sites
-site=medium.com$discard
-site=*.medium.com$discard
-site=substack.com$discard
-site=*.substack.com$discard
-site=wordpress.com$discard
-site=*.wordpress.com$discard
-site=blogger.com$discard
-site=*.blogger.com$discard
-site=tumblr.com$discard
-
-! News and magazine sites
-site=techcrunch.com$discard
-site=theverge.com$discard
-site=wired.com$discard
-site=arstechnica.com$discard
-site=venturebeat.com$discard
-site=zdnet.com$discard
-site=cnet.com$discard
-
-! Social platforms
-site=reddit.com$discard
-site=*.reddit.com$discard
-site=facebook.com$discard
-site=twitter.com$discard
-site=linkedin.com$discard
-site=quora.com$discard
+! Clear non-policy content
 site=stackexchange.com$discard
 site=stackoverflow.com$discard
 
@@ -126,7 +100,6 @@ site=stackoverflow.com$discard
 */seo*$downrank=5
 */marketing*$downrank=5
 */advertising*$downrank=5
-
 
 ! ==============================================================================
 ! ADDITIONAL FILTERING
