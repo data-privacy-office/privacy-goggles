@@ -1,218 +1,177 @@
 ! name: Privacy Policy Finder
-! description: Prioritizes actual privacy policies and data protection documents using URL, title, and description matching while filtering instructional content
+! description: Prioritizes actual privacy policies and data protection documents while filtering out instructional content
 ! public: true
 ! author: Privacy Policy Hunter
 ! avatar: #2d5aa0
 
 ! ==============================================================================
-! BOOST: Actual Privacy Policy and Data Protection Pages
+! BOOST: Privacy Policy and Data Protection Pages
 ! ==============================================================================
 
-! Privacy policy pages
-*/privacy-policy*$boost=10
-*/privacy_policy*$boost=10
-*/privacypolicy*$boost=10
-*/privacy-notice*$boost=10
-*/privacy_notice*$boost=10
-*/privacynotice*$boost=10
-*/privacy-statement*$boost=10
-*/privacy_statement*$boost=10
-*/privacystatement*$boost=10
+! Privacy policy URL patterns
+/privacy-policy$boost=10
+/privacy_policy$boost=10
+/privacypolicy$boost=10
+/privacy-notice$boost=10
+/privacy_notice$boost=10
+/privacynotice$boost=10
+/privacy-statement$boost=10
+/privacy_statement$boost=10
+/privacystatement$boost=10
+/privacy$boost=8
 
-! Title-based boosting for privacy policies
-privacy policy$intitle,$boost=10
-privacy notice$intitle,$boost=10
-privacy statement$intitle,$boost=10
-data protection policy$intitle,$boost=10
-cookie policy$intitle,$boost=10
+! Data protection and GDPR patterns
+/data-protection$boost=10
+/data_protection$boost=10
+/dataprotection$boost=10
+/gdpr$boost=9
+/data-privacy$boost=9
+/data_privacy$boost=9
+/dataprivacy$boost=9
 
-! Data protection and GDPR pages
-*/data-protection*$boost=10
-*/data_protection*$boost=10
-*/dataprotection*$boost=10
-*/gdpr*$boost=9
-*/data-privacy*$boost=9
-*/data_privacy*$boost=9
-*/dataprivacy*$boost=9
+! Legal directories with privacy content
+/legal/privacy$boost=10
+/legal/data-protection$boost=10
+/policies/privacy$boost=10
+/terms-and-policies/$boost=7
+/legal-info/$boost=7
+/legal/$boost=5
 
-! Title-based boosting for data protection
-data protection$intitle,boost=10
-gdpr$intitle,boost=9
-data privacy$intitle,boost=9
-cookie notice$intitle,boost=8
-terms of service$intitle,boost=5
-
-! Content-based filtering to discard non-policy content
-how to$intitle,discard
-guide$intitle,downrank=8
-tutorial$intitle,downrank=8
-explained$intitle,downrank=5
-
-! Description-based boosting for privacy content
-privacy policy$indescription,boost=8
-data protection$indescription,boost=8
-cookie policy$indescription,boost=7
-privacy notice$indescription,boost=8
-gdpr compliance$indescription,boost=7
-
-! Description-based filtering of instructional content
-how to understand$indescription,downrank=8
-privacy guide$indescription,downrank=8
-explained privacy$indescription,downrank=8
+! PDF privacy documents
+/privacy*.pdf$boost=10
+/data-protection*.pdf$boost=10
+/gdpr*.pdf$boost=10
 
 ! Help pages with privacy content
 /help/privacy$boost=8
 /help/data$boost=7
 /help/settings$boost=6
 
-! Legal and policy directories
-*/legal/privacy*$boost=10
-*/legal/data-protection*$boost=10
-*/policies/privacy*$boost=10
-*/terms-and-policies/*$boost=8
-*/legal-info/*$boost=8
-
-! Company privacy policy pages (any domain)
-*/privacy*$boost=10
-*/legal/privacy*$boost=10
-*/policies/privacy*$boost=10
-
-! PDF privacy policies and data protection documents
-*/privacy*.pdf$boost=10
-*/data-protection*.pdf$boost=10
-*/gdpr*.pdf$boost=10
-
 ! ==============================================================================
 ! DISCARD: Educational Sites, Blogs, and Non-Policy Content
 ! ==============================================================================
 
 ! Educational and informational sites
-site=wikipedia.org$discard
-site=wikimedia.org$discard
-site=fandom.com$discard
+$discard,site=wikipedia.org
+$discard,site=wikimedia.org
+$discard,site=fandom.com
 
 ! Blog platforms and content sites
-site=medium.com$discard
-site=substack.com$discard
-site=wordpress.com$discard
-site=blogger.com$discard
-site=tumblr.com$discard
+$discard,site=medium.com
+$discard,site=substack.com
+$discard,site=wordpress.com
+$discard,site=blogger.com
+$discard,site=tumblr.com
 
 ! News and magazine sites
-site=techcrunch.com$discard
-site=theverge.com$discard
-site=wired.com$discard
-site=arstechnica.com$discard
-site=venturebeat.com$discard
-site=zdnet.com$discard
-site=cnet.com$discard
+$discard,site=techcrunch.com
+$discard,site=theverge.com
+$discard,site=wired.com
+$discard,site=arstechnica.com
+$discard,site=venturebeat.com
+$discard,site=zdnet.com
+$discard,site=cnet.com
 
-! Social platforms (non-policy content)
-site=reddit.com$discard
-site=facebook.com$discard
-site=twitter.com$discard
-site=linkedin.com$discard
-site=quora.com$discard
-*/posts*$discard
-*/comments*$discard
-*/discussions*$discard
-*/forums*$discard
-
-! Clear non-policy content
-site=stackexchange.com$discard
-site=stackoverflow.com$discard
-
-! Tutorial and guide content patterns (not actual policies)
-*/how-to-privacy*$discard
-*/how-to*$downrank=8
-*/guide-privacy*$discard
-*/guide*$downrank=8
-*/tutorial-privacy*$discard
-*/tutorial*$downrank=8
-*/explained*$downrank=5
-*/understanding-privacy*$downrank=8
-*/understanding*$downrank=5
-*/what-is-privacy*$downrank=8
-*/what-is*$downrank=5
-*/introduction-to-privacy*$downrank=8
-*/introduction-to*$downrank=5
-*/getting-started*$downrank=8
-*/get-started*$downrank=8
-*/getting_started*$downrank=8
-*/get_started*$downrank=8
-*/beginner*$downrank=8
-*/basics*$downrank=8
-*/learn*$downrank=5
-*/overview*$downrank=5
-*/summary*$downrank=5
-
-! Support documentation (but keep help pages for privacy settings)
-*/support/*$downrank=5
-*/docs/*$downrank=8
-*/documentation/*$downrank=8
-*/faq*$discard
-*/knowledge-base*$discard
-*/kb/*$discard
-*/contact-us*$downrank=8
-*/about-us*$downrank=5
-*/resources/*$downrank=5
-*/downloads/*$downrank=5
-*/center/*$downrank=5
-*/hub/*$downrank=5
+! Social platforms and forums
+$discard,site=reddit.com
+$discard,site=facebook.com
+$discard,site=twitter.com
+$discard,site=linkedin.com
+$discard,site=quora.com
+$discard,site=stackexchange.com
+$discard,site=stackoverflow.com
 
 ! ==============================================================================
-! DOWNRANK: Template and Generic Content
+! DOWNRANK: Instructional and Guide Content
 ! ==============================================================================
 
-! Template and example sites
-*/template*$downrank=5
-*/example*$downrank=5
-*/sample*$downrank=5
-*/demo*$downrank=5
-*/test*$downrank=5
+! Tutorial and guide content patterns
+/how-to$downrank=8
+/guide$downrank=8
+/tutorial$downrank=8
+/getting-started$downrank=8
+/get-started$downrank=8
+/getting_started$downrank=8
+/get_started$downrank=8
+/beginner$downrank=8
+/basics$downrank=8
+/explained$downrank=5
+/understanding$downrank=5
+/what-is$downrank=5
+/introduction-to$downrank=5
+/learn$downrank=5
+/overview$downrank=5
+/summary$downrank=5
+
+! Support and documentation patterns
+/support/$downrank=5
+/docs/$downrank=8
+/documentation/$downrank=8
+/contact-us$downrank=8
+/about-us$downrank=5
+/resources/$downrank=5
+/downloads/$downrank=5
+/center/$downrank=5
+/hub/$downrank=5
+
+! Instructional content patterns
+/step-by-step$discard
+/steps$downrank=8
+/instructions$downrank=8
+/manual$downrank=8
+/handbook$downrank=8
+/playbook$downrank=8
+/checklist$downrank=8
+/tips$downrank=8
+/advice$downrank=8
+/best-practices$downrank=8
+/recommendations$downrank=8
+/guidelines$downrank=8
+
+! Blog and article patterns
+/blog/$discard
+/article/$downrank=8
+/post/$downrank=8
+/news/$downrank=8
+/press/$downrank=5
+/media/$downrank=5
+
+! FAQ and knowledge base
+/faq$discard
+/knowledge-base$discard
+/kb/$discard
+
+! ==============================================================================
+! DOWNRANK: Commercial and Template Content
+! ==============================================================================
+
+! Template and example content
+/template$downrank=5
+/example$downrank=5
+/sample$downrank=5
+/demo$downrank=5
+/test$downrank=5
+
+! Commercial content
+/affiliate$downrank=3
+/sponsored$downrank=3
+/advertisement$downrank=3
 
 ! Generic legal information
-*/legal-information*$downrank=3
-*/general-terms*$downrank=3
-*/terms-of-service*$downrank=3
-*/terms-and-conditions*$downrank=3
+/legal-information$downrank=3
+/general-terms$downrank=3
+/terms-of-service$downrank=3
+/terms-and-conditions$downrank=3
 
 ! SEO and marketing content
-*/seo*$downrank=5
-*/marketing*$downrank=5
-*/advertising*$downrank=5
+/seo$downrank=5
+/marketing$downrank=5
+/advertising$downrank=5
 
 ! ==============================================================================
-! ADDITIONAL FILTERING
+! BOOST: Legal and Compliance Content
 ! ==============================================================================
 
-! Instructional and informational content
-*/step-by-step*$discard
-*/steps*$downrank=8
-*/instructions*$downrank=8
-*/manual*$downrank=8
-*/handbook*$downrank=8
-*/playbook*$downrank=8
-*/checklist*$downrank=8
-*/tips*$downrank=8
-*/advice*$downrank=8
-*/best-practices*$downrank=8
-*/recommendations*$downrank=8
-*/guidelines*$downrank=8
-
-! Blog-style content patterns
-*/blog/*$discard
-*/article/*$downrank=8
-*/post/*$downrank=8
-*/news/*$downrank=8
-*/press/*$downrank=5
-*/media/*$downrank=5
-
-! Downrank overly commercial content
-*/affiliate*$downrank=3
-*/sponsored*$downrank=3
-*/advertisement*$downrank=3
-
-! Boost actual legal and compliance pages
-*/legal*$boost=3
-*/compliance*$boost=3
+! Boost legal and compliance pages
+/compliance$boost=3
+/corporate/privacy$boost=8
