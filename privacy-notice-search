@@ -1,5 +1,5 @@
 ! name: Privacy Policy Finder
-! description: Prioritizes actual privacy policies and data protection documents, filtering instructional content and guides while preserving help pages that may contain privacy settings
+! description: Prioritizes actual privacy policies and data protection documents using URL, title, and description matching while filtering instructional content
 ! public: true
 ! author: Privacy Policy Hunter
 ! avatar: #2d5aa0
@@ -19,6 +19,13 @@
 */privacy_statement*$boost=10
 */privacystatement*$boost=10
 
+! Title-based boosting for privacy policies
+privacy policy$intitle,$boost=10
+privacy notice$intitle,$boost=10
+privacy statement$intitle,$boost=10
+data protection policy$intitle,$boost=10
+cookie policy$intitle,$boost=10
+
 ! Data protection and GDPR pages
 */data-protection*$boost=10
 */data_protection*$boost=10
@@ -28,10 +35,35 @@
 */data_privacy*$boost=9
 */dataprivacy*$boost=9
 
+! Title-based boosting for data protection
+data protection$intitle,boost=10
+gdpr$intitle,boost=9
+data privacy$intitle,boost=9
+cookie notice$intitle,boost=8
+terms of service$intitle,boost=5
+
+! Content-based filtering to discard non-policy content
+how to$intitle,discard
+guide$intitle,downrank=8
+tutorial$intitle,downrank=8
+explained$intitle,downrank=5
+
+! Description-based boosting for privacy content
+privacy policy$indescription,boost=8
+data protection$indescription,boost=8
+cookie policy$indescription,boost=7
+privacy notice$indescription,boost=8
+gdpr compliance$indescription,boost=7
+
+! Description-based filtering of instructional content
+how to understand$indescription,downrank=8
+privacy guide$indescription,downrank=8
+explained privacy$indescription,downrank=8
+
 ! Help pages with privacy content
-*/help/*privacy*$boost=8
-*/help/*data*$boost=7
-*/help/*settings*$boost=6
+*/help*privacy*$boost=8
+*/help*data*$boost=7
+*/help*settings*$boost=6
 
 ! Legal and policy directories
 */legal/privacy*$boost=10
@@ -56,19 +88,14 @@
 
 ! Educational and informational sites
 site=wikipedia.org$discard
-site=*.wikipedia.org$discard
 site=wikimedia.org$discard
 site=fandom.com$discard
 
 ! Blog platforms and content sites
 site=medium.com$discard
-site=*.medium.com$discard
 site=substack.com$discard
-site=*.substack.com$discard
 site=wordpress.com$discard
-site=*.wordpress.com$discard
 site=blogger.com$discard
-site=*.blogger.com$discard
 site=tumblr.com$discard
 
 ! News and magazine sites
@@ -82,33 +109,32 @@ site=cnet.com$discard
 
 ! Social platforms (non-policy content)
 site=reddit.com$discard
-site=*.reddit.com$discard
 site=facebook.com$discard
 site=twitter.com$discard
 site=linkedin.com$discard
 site=quora.com$discard
-*/posts/*$discard
-*/comments/*$discard
-*/discussions/*$discard
-*/forums/*$discard
+*/posts*$discard
+*/comments*$discard
+*/discussions*$discard
+*/forums*$discard
 
 ! Clear non-policy content
 site=stackexchange.com$discard
 site=stackoverflow.com$discard
 
 ! Tutorial and guide content patterns (not actual policies)
-*/how-to-*privacy*$discard
-*/how-to-*$downrank=8
-*/guide*privacy*$discard
+*/how-to-privacy*$discard
+*/how-to*$downrank=8
+*/guide-privacy*$discard
 */guide*$downrank=8
-*/tutorial*privacy*$discard
+*/tutorial-privacy*$discard
 */tutorial*$downrank=8
 */explained*$downrank=5
-*/understanding*privacy*$downrank=8
+*/understanding-privacy*$downrank=8
 */understanding*$downrank=5
-*/what-is*privacy*$downrank=8
+*/what-is-privacy*$downrank=8
 */what-is*$downrank=5
-*/introduction-to*privacy*$downrank=8
+*/introduction-to-privacy*$downrank=8
 */introduction-to*$downrank=5
 */getting-started*$downrank=8
 */get-started*$downrank=8
