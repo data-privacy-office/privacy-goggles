@@ -1,5 +1,5 @@
 ! name: Privacy Policy Finder
-! description: Prioritizes actual privacy policies and data protection documents based on URL patterns, filtering out guides and tutorials
+! description: Prioritizes actual privacy policies and data protection documents, filtering instructional content and guides while preserving help pages that may contain privacy settings
 ! public: true
 ! author: Privacy Policy Hunter
 ! avatar: #2d5aa0
@@ -28,6 +28,11 @@
 */data_privacy*$boost=9
 */dataprivacy*$boost=9
 
+! Help pages with privacy content
+*/help/*privacy*$boost=8
+*/help/*data*$boost=7
+*/help/*settings*$boost=6
+
 ! Legal and policy directories
 */legal/privacy*$boost=10
 */legal/data-protection*$boost=10
@@ -35,13 +40,10 @@
 */terms-and-policies/*$boost=8
 */legal-info/*$boost=8
 
-! Company domain patterns for actual policies
-site=*.com/privacy*$boost=10
-site=*.org/privacy*$boost=10
-site=*.net/privacy*$boost=10
-site=*.co.uk/privacy*$boost=10
-site=*.de/datenschutz*$boost=10
-site=*.fr/confidentialite*$boost=10
+! Company privacy policy pages (any domain)
+*/privacy*$boost=10
+*/legal/privacy*$boost=10
+*/policies/privacy*$boost=10
 
 ! PDF privacy policies and data protection documents
 */privacy*.pdf$boost=10
@@ -49,10 +51,42 @@ site=*.fr/confidentialite*$boost=10
 */gdpr*.pdf$boost=10
 
 ! ==============================================================================
-! DISCARD: Non-Policy Content Patterns
+! DISCARD: Educational Sites, Blogs, and Non-Policy Content
 ! ==============================================================================
 
+! Educational and informational sites
+site=wikipedia.org$discard
+site=*.wikipedia.org$discard
+site=wikimedia.org$discard
+site=fandom.com$discard
+
+! Blog platforms and content sites
+site=medium.com$discard
+site=*.medium.com$discard
+site=substack.com$discard
+site=*.substack.com$discard
+site=wordpress.com$discard
+site=*.wordpress.com$discard
+site=blogger.com$discard
+site=*.blogger.com$discard
+site=tumblr.com$discard
+
+! News and magazine sites
+site=techcrunch.com$discard
+site=theverge.com$discard
+site=wired.com$discard
+site=arstechnica.com$discard
+site=venturebeat.com$discard
+site=zdnet.com$discard
+site=cnet.com$discard
+
 ! Social platforms (non-policy content)
+site=reddit.com$discard
+site=*.reddit.com$discard
+site=facebook.com$discard
+site=twitter.com$discard
+site=linkedin.com$discard
+site=quora.com$discard
 */posts/*$discard
 */comments/*$discard
 */discussions/*$discard
@@ -62,22 +96,43 @@ site=*.fr/confidentialite*$boost=10
 site=stackexchange.com$discard
 site=stackoverflow.com$discard
 
-! Educational content patterns
-*/how-to-*$discard
-*/guide*$discard
-*/tutorial*$discard
-*/explained*$discard
-*/understanding*$discard
-*/what-is*$discard
-*/introduction-to*$discard
+! Tutorial and guide content patterns (not actual policies)
+*/how-to-*privacy*$discard
+*/how-to-*$downrank=8
+*/guide*privacy*$discard
+*/guide*$downrank=8
+*/tutorial*privacy*$discard
+*/tutorial*$downrank=8
+*/explained*$downrank=5
+*/understanding*privacy*$downrank=8
+*/understanding*$downrank=5
+*/what-is*privacy*$downrank=8
+*/what-is*$downrank=5
+*/introduction-to*privacy*$downrank=8
+*/introduction-to*$downrank=5
+*/getting-started*$downrank=8
+*/get-started*$downrank=8
+*/getting_started*$downrank=8
+*/get_started*$downrank=8
+*/beginner*$downrank=8
+*/basics*$downrank=8
+*/learn*$downrank=5
+*/overview*$downrank=5
+*/summary*$downrank=5
 
-! Help and support documentation
-*/help/*$discard
-*/support/*$discard
-*/docs/*$discard
-*/documentation/*$discard
+! Support documentation (but keep help pages for privacy settings)
+*/support/*$downrank=5
+*/docs/*$downrank=8
+*/documentation/*$downrank=8
 */faq*$discard
 */knowledge-base*$discard
+*/kb/*$discard
+*/contact-us*$downrank=8
+*/about-us*$downrank=5
+*/resources/*$downrank=5
+*/downloads/*$downrank=5
+*/center/*$downrank=5
+*/hub/*$downrank=5
 
 ! ==============================================================================
 ! DOWNRANK: Template and Generic Content
@@ -105,12 +160,33 @@ site=stackoverflow.com$discard
 ! ADDITIONAL FILTERING
 ! ==============================================================================
 
+! Instructional and informational content
+*/step-by-step*$discard
+*/steps*$downrank=8
+*/instructions*$downrank=8
+*/manual*$downrank=8
+*/handbook*$downrank=8
+*/playbook*$downrank=8
+*/checklist*$downrank=8
+*/tips*$downrank=8
+*/advice*$downrank=8
+*/best-practices*$downrank=8
+*/recommendations*$downrank=8
+*/guidelines*$downrank=8
+
+! Blog-style content patterns
+*/blog/*$discard
+*/article/*$downrank=8
+*/post/*$downrank=8
+*/news/*$downrank=8
+*/press/*$downrank=5
+*/media/*$downrank=5
+
 ! Downrank overly commercial content
 */affiliate*$downrank=3
 */sponsored*$downrank=3
 */advertisement*$downrank=3
 
-! Boost actual legal pages
-*/legal*$boost=5
-*/compliance*$boost=5
-*/corporate/privacy*$boost=8
+! Boost actual legal and compliance pages
+*/legal*$boost=3
+*/compliance*$boost=3
