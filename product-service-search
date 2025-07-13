@@ -1,0 +1,413 @@
+! Lower priority company pages
+/team$boost=3
+/leadership$boost=3
+/management$boost=3
+/history$boost=2! name: Services & Products Finder
+! description: Prioritizes company service pages, product catalogs, business offerings, company information containing service listings, and IT/tech products
+! public: true
+! author: Business Services Hunter
+! avatar: #0066cc
+
+! ==============================================================================
+! BOOST: Service and Product Pages (URLs)
+! ==============================================================================
+
+! Service-related URL patterns
+/services$boost=10
+/services/$boost=10
+/service$boost=9
+/service/$boost=9
+/solutions$boost=10
+/solutions/$boost=10
+/offerings$boost=9
+/offering$boost=9
+/what-we-do$boost=8
+/what_we_do$boost=8
+/capabilities$boost=8
+/features$boost=8
+
+! Product-related URL patterns  
+/products$boost=10
+/products/$boost=10
+/product$boost=9
+/product/$boost=9
+/catalog$boost=10
+/catalogue$boost=10
+/shop$boost=9
+/store$boost=9
+/marketplace$boost=8
+
+! IT product catalog patterns
+/applications$boost=9
+/applications/$boost=9
+/apps$boost=9
+/apps/$boost=9
+/extensions$boost=8
+/extensions/$boost=8
+/plugins$boost=8
+/plugins/$boost=8
+/tools$boost=8
+/tools/$boost=8
+
+! Business-specific service patterns
+/consulting$boost=9
+/software$boost=9
+/platform$boost=8
+/api$boost=8
+/enterprise$boost=8
+/business$boost=7
+/commercial$boost=7
+
+! IT and tech product patterns
+/application$boost=9
+/app$boost=9
+/extension$boost=8
+/plugin$boost=8
+/add-on$boost=8
+/addon$boost=8
+/tool$boost=8
+/toolkit$boost=8
+/framework$boost=8
+/system$boost=8
+/dashboard$boost=8
+/interface$boost=7
+/ai$boost=9
+/ml$boost=8
+/llm$boost=9
+/saas$boost=9
+/sdk$boost=8
+/cloud$boost=8
+/analytics$boost=7
+/database$boost=7
+
+! ==============================================================================
+! BOOST: Service and Product Pages (Titles)
+! ==============================================================================
+
+! Title-based boosting for services
+services$intitle$boost=10
+solutions$intitle$boost=10
+offerings$intitle$boost=9
+consulting$intitle$boost=9
+platform$intitle$boost=8
+software$intitle$boost=8
+capabilities$intitle$boost=8
+features$intitle$boost=8
+
+! Title-based boosting for IT products
+application$intitle$boost=9
+app$intitle$boost=9
+extension$intitle$boost=8
+plugin$intitle$boost=8
+tool$intitle$boost=8
+framework$intitle$boost=8
+system$intitle$boost=8
+dashboard$intitle$boost=8
+ai$intitle$boost=9
+ml$intitle$boost=8
+llm$intitle$boost=9
+saas$intitle$boost=9
+sdk$intitle$boost=8
+cloud$intitle$boost=8
+analytics$intitle$boost=7
+
+! Title-based boosting for company info with service listings
+about$intitle$boost=6
+company$intitle$boost=6
+profile$intitle$boost=6
+overview$intitle$boost=6
+
+! Title-based boosting for products
+products$intitle$boost=10
+catalog$intitle$boost=10
+catalogue$intitle$boost=10
+shop$intitle$boost=9
+store$intitle$boost=9
+marketplace$intitle$boost=8
+
+! Title-based boosting for IT product catalogs
+applications$intitle$boost=9
+apps$intitle$boost=9
+extensions$intitle$boost=8
+plugins$intitle$boost=8
+tools$intitle$boost=8
+frameworks$intitle$boost=8
+systems$intitle$boost=8
+
+! ==============================================================================
+! BOOST: Service and Product Pages (Descriptions)
+! ==============================================================================
+
+! Description-based boosting for services
+services$indescription$boost=8
+solutions$indescription$boost=8
+consulting$indescription$boost=8
+platform$indescription$boost=7
+offerings$indescription$boost=7
+capabilities$indescription$boost=7
+features$indescription$boost=7
+
+! Description-based boosting for IT products
+application$indescription$boost=8
+app$indescription$boost=8
+extension$indescription$boost=7
+plugin$indescription$boost=7
+tool$indescription$boost=7
+framework$indescription$boost=7
+system$indescription$boost=7
+dashboard$indescription$boost=7
+ai$indescription$boost=8
+ml$indescription$boost=7
+llm$indescription$boost=8
+saas$indescription$boost=8
+sdk$indescription$boost=7
+cloud$indescription$boost=7
+analytics$indescription$boost=6
+
+! Description-based boosting for company info with service mentions
+about$indescription$boost=5
+company$indescription$boost=5
+profile$indescription$boost=5
+overview$indescription$boost=6
+
+! Description-based boosting for products
+products$indescription$boost=8
+catalog$indescription$boost=8
+shop$indescription$boost=7
+store$indescription$boost=7
+marketplace$indescription$boost=7
+
+! Description-based boosting for IT product catalogs
+applications$indescription$boost=7
+apps$indescription$boost=7
+extensions$indescription$boost=6
+plugins$indescription$boost=6
+tools$indescription$boost=6
+
+! ==============================================================================
+! BOOST: Service and Product Pages (Content)
+! ==============================================================================
+
+! Content-based boosting for business offerings
+services$intext$boost=6
+products$intext$boost=6
+solutions$intext$boost=6
+catalog$intext$boost=6
+consulting$intext$boost=5
+platform$intext$boost=5
+capabilities$intext$boost=5
+features$intext$boost=5
+
+! Content-based boosting for IT products
+application$intext$boost=5
+app$intext$boost=5
+extension$intext$boost=5
+plugin$intext$boost=5
+tool$intext$boost=5
+framework$intext$boost=5
+system$intext$boost=5
+dashboard$intext$boost=5
+ai$intext$boost=6
+ml$intext$boost=5
+llm$intext$boost=6
+saas$intext$boost=6
+sdk$intext$boost=5
+cloud$intext$boost=5
+analytics$intext$boost=5
+
+! Content-based boosting for company info with service mentions
+about$intext$boost=4
+company$intext$boost=4
+overview$intext$boost=5
+
+! ==============================================================================
+! DISCARD: Non-Service/Product Content
+! ==============================================================================
+
+! Company information pages (often contain service listings)
+/about$boost=7
+/about/$boost=7
+/about-us$boost=7
+/about_us$boost=7
+/company$boost=6
+/company/$boost=6
+/who-we-are$boost=6
+/who_we_are$boost=6
+/what-we-do$boost=9
+/what_we_do$boost=9
+
+! Company overview and profile pages
+/profile$boost=6
+/overview$boost=6
+/introduction$boost=6
+/mission$boost=5
+/vision$boost=5
+/values$boost=4
+
+! Contact and location pages (no service content)
+/contact$downrank=5
+/contact/$downrank=5
+/contact-us$downrank=5
+/contact_us$downrank=5
+/location$downrank=3
+/locations$downrank=3
+/office$downrank=3
+/offices$downrank=3
+/address$downrank=3
+
+! News, blog, and media content
+/news$discard
+/news/$discard
+/blog$discard
+/blog/$discard
+/press$discard
+/media$discard
+/articles$discard
+/insights$discard
+/resources$discard
+
+! Career and job pages
+/careers$discard
+/career$discard
+/jobs$discard
+/job$discard
+/employment$discard
+/hiring$discard
+/join$discard
+/opportunities$discard
+
+! Pure support pages (not service descriptions)
+/faq$discard
+/documentation$downrank=5
+/docs$downrank=5
+/manual$downrank=5
+
+! Legal and policy pages
+/legal$discard
+/privacy$discard
+/terms$discard
+/policy$discard
+/compliance$discard
+
+! ==============================================================================
+! DISCARD: Educational and Informational Sites
+! ==============================================================================
+
+! Educational platforms
+$discard,site=wikipedia.org
+$discard,site=wikimedia.org
+$discard,site=stackoverflow.com
+$discard,site=stackexchange.com
+
+! News and media sites
+$discard,site=techcrunch.com
+$discard,site=theverge.com
+$discard,site=wired.com
+$discard,site=arstechnica.com
+$discard,site=reuters.com
+$discard,site=bloomberg.com
+
+! Social platforms
+$discard,site=reddit.com
+$discard,site=facebook.com
+$discard,site=twitter.com
+$discard,site=linkedin.com
+$discard,site=quora.com
+
+! Blog platforms
+$discard,site=medium.com
+$discard,site=substack.com
+$discard,site=wordpress.com
+$discard,site=blogger.com
+
+! ==============================================================================
+! DOWNRANK: Less Relevant Business Content
+! ==============================================================================
+
+! Investor and financial pages
+/investor$downrank=5
+/investors$downrank=5
+/financial$downrank=5
+/earnings$downrank=5
+/annual-report$downrank=5
+
+! General corporate pages
+/corporate$downrank=3
+/governance$downrank=5
+/sustainability$downrank=5
+/csr$downrank=5
+
+! Event and conference pages
+/events$downrank=3
+/event$downrank=3
+/conference$downrank=3
+/webinar$downrank=3
+/training$downrank=3
+
+! Case studies and testimonials (relevant for understanding services)
+/case-studies$boost=5
+/case_studies$boost=5
+/testimonials$boost=3
+/reviews$boost=3
+/success-stories$boost=5
+
+! ==============================================================================
+! BOOST: Service and Product Descriptions and Explanations
+! ==============================================================================
+
+! Service explanation and description pages
+/service-overview$boost=8
+/service_overview$boost=8
+/services-overview$boost=8
+/services_overview$boost=8
+/what-we-offer$boost=8
+/what_we_offer$boost=8
+/our-services$boost=9
+/our_services$boost=9
+
+! Product explanation and description pages
+/product-overview$boost=8
+/product_overview$boost=8
+/products-overview$boost=8
+/products_overview$boost=8
+/our-products$boost=9
+/our_products$boost=9
+
+! General offering explanations
+/overview$boost=6
+/introduction$boost=6
+/explained$boost=6
+/description$boost=7
+/details$boost=7
+
+! Title-based boosting for explanatory content
+overview$intitle$boost=6
+introduction$intitle$boost=6
+explained$intitle$boost=6
+description$intitle$boost=7
+details$intitle$boost=7
+
+! Description-based boosting for explanatory content
+overview$indescription$boost=6
+description$indescription$boost=7
+explanation$indescription$boost=6
+details$indescription$boost=6
+
+! ==============================================================================
+! BOOST: E-commerce and Pricing
+! ==============================================================================
+
+! Pricing and purchase pages
+/pricing$boost=9
+/price$boost=9
+/plans$boost=9
+/packages$boost=8
+/subscription$boost=8
+/buy$boost=8
+/purchase$boost=8
+/order$boost=8
+
+! E-commerce patterns
+/cart$boost=7
+/checkout$boost=7
+/payment$boost=7
