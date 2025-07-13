@@ -1,0 +1,143 @@
+! name: Privacy Policy Finder
+! description: Prioritizes actual privacy policies and data protection documents while filtering out guides, articles, and general information
+! public: true
+! author: Privacy Policy Hunter
+! avatar: #2d5aa0
+
+! ==============================================================================
+! BOOST: Actual Privacy Policy and Data Protection Pages
+! ==============================================================================
+
+! Privacy policy pages
+*/privacy-policy*$boost=10
+*/privacy_policy*$boost=10
+*/privacypolicy*$boost=10
+*/privacy-notice*$boost=10
+*/privacy_notice*$boost=10
+*/privacynotice*$boost=10
+*/privacy-statement*$boost=10
+*/privacy_statement*$boost=10
+*/privacystatement*$boost=10
+
+! Data protection and GDPR pages
+*/data-protection*$boost=10
+*/data_protection*$boost=10
+*/dataprotection*$boost=10
+*/gdpr*$boost=9
+*/data-privacy*$boost=9
+*/data_privacy*$boost=9
+*/dataprivacy*$boost=9
+
+! Legal and policy directories
+*/legal/privacy*$boost=10
+*/legal/data-protection*$boost=10
+*/policies/privacy*$boost=10
+*/terms-and-policies/*$boost=8
+*/legal-info/*$boost=8
+
+! Company domain patterns for actual policies
+site=*.com/privacy*$boost=10
+site=*.org/privacy*$boost=10
+site=*.net/privacy*$boost=10
+site=*.co.uk/privacy*$boost=10
+site=*.de/datenschutz*$boost=10
+site=*.fr/confidentialite*$boost=10
+
+! PDF privacy policies and data protection documents
+*/privacy*.pdf$boost=10
+*/data-protection*.pdf$boost=10
+*/gdpr*.pdf$boost=10
+
+! ==============================================================================
+! DISCARD: General Information, Guides, and Non-Policy Content
+! ==============================================================================
+
+! Educational and informational sites
+site=wikipedia.org$discard
+site=*.wikipedia.org$discard
+site=wikimedia.org$discard
+site=fandom.com$discard
+
+! Blog platforms and content sites
+site=medium.com$discard
+site=*.medium.com$discard
+site=substack.com$discard
+site=*.substack.com$discard
+site=wordpress.com$discard
+site=*.wordpress.com$discard
+site=blogger.com$discard
+site=*.blogger.com$discard
+site=tumblr.com$discard
+
+! News and magazine sites
+site=techcrunch.com$discard
+site=theverge.com$discard
+site=wired.com$discard
+site=arstechnica.com$discard
+site=venturebeat.com$discard
+site=zdnet.com$discard
+site=cnet.com$discard
+
+! Social platforms
+site=reddit.com$discard
+site=*.reddit.com$discard
+site=facebook.com$discard
+site=twitter.com$discard
+site=linkedin.com$discard
+site=quora.com$discard
+site=stackexchange.com$discard
+site=stackoverflow.com$discard
+
+! Educational content patterns
+*/how-to-*$discard
+*/guide*$discard
+*/tutorial*$discard
+*/explained*$discard
+*/understanding*$discard
+*/what-is*$discard
+*/introduction-to*$discard
+
+! Help and support documentation
+*/help/*$discard
+*/support/*$discard
+*/docs/*$discard
+*/documentation/*$discard
+*/faq*$discard
+*/knowledge-base*$discard
+
+! ==============================================================================
+! DOWNRANK: Template and Generic Content
+! ==============================================================================
+
+! Template and example sites
+*/template*$downrank=5
+*/example*$downrank=5
+*/sample*$downrank=5
+*/demo*$downrank=5
+*/test*$downrank=5
+
+! Generic legal information
+*/legal-information*$downrank=3
+*/general-terms*$downrank=3
+*/terms-of-service*$downrank=3
+*/terms-and-conditions*$downrank=3
+
+! SEO and marketing content
+*/seo*$downrank=5
+*/marketing*$downrank=5
+*/advertising*$downrank=5
+
+
+! ==============================================================================
+! ADDITIONAL FILTERING
+! ==============================================================================
+
+! Downrank overly commercial content
+*/affiliate*$downrank=3
+*/sponsored*$downrank=3
+*/advertisement*$downrank=3
+
+! Boost actual legal pages
+*/legal*$boost=5
+*/compliance*$boost=5
+*/corporate/privacy*$boost=8
