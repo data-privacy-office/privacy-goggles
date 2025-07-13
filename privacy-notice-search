@@ -61,9 +61,9 @@ privacy guide$indescription,downrank=8
 explained privacy$indescription,downrank=8
 
 ! Help pages with privacy content
-*/help*privacy*$boost=8
-*/help*data*$boost=7
-*/help*settings*$boost=6
+*/help*privacy$boost=8
+*/help*data$boost=7
+*/help*settings$boost=6
 
 ! Legal and policy directories
 */legal/privacy*$boost=10
