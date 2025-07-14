@@ -3,7 +3,139 @@
 ! public: false
 ! author: Privacy Policy Finder
 ! avatar: #2d5aa0
+! ==============================================================================
+! BOOST: Universal Privacy Policy Detection (highest priority)
+! ==============================================================================
+inurl:privacy-policy$boost=12
+inurl:privacy_policy$boost=12
+inurl:privacypolicy$boost=12
+inurl:privacy-notice$boost=12
+inurl:privacy-statement$boost=12
+inurl:datenschutz$boost=12
+inurl:confidentialite$boost=12
+inurl:privacidad$boost=12
+inurl:informativa-privacy$boost=12
+inurl:privacyverklaring$boost=12
+inurl:polityka-prywatnosci$boost=12
+inurl:политика-конфиденциальности$boost=12
+inurl:プライバシーポリシー$boost=12
+inurl:개인정보처리방침$boost=12
 
+intitle:"privacy policy"$boost=12
+intitle:"privacy notice"$boost=12
+intitle:"privacy statement"$boost=12
+intitle:"datenschutz"$boost=12
+intitle:"confidentialite"$boost=12
+intitle:"privacidad"$boost=12
+intitle:"informativa privacy"$boost=12
+intitle:"polityka prywatnosci"$boost=12
+
+! ==============================================================================
+! BOOST: Universal Cookie Policy Detection
+! ==============================================================================
+inurl:cookie-policy$boost=11
+inurl:cookie_policy$boost=11
+inurl:cookiepolicy$boost=11
+inurl:cookie-notice$boost=11
+inurl:cookies$boost=11
+inurl:politica-cookies$boost=11
+inurl:politique-cookies$boost=11
+inurl:cookie-richtlinie$boost=11
+inurl:informativa-cookie$boost=11
+inurl:politica-cookie$boost=11
+inurl:aviso-cookies$boost=11
+inurl:クッキーポリシー$boost=11
+inurl:쿠키-정책$boost=11
+
+intitle:"cookie policy"$boost=11
+intitle:"cookie notice"$boost=11
+intitle:"cookies"$boost=11
+intitle:"politica cookies"$boost=11
+intitle:"politique cookies"$boost=11
+intitle:"cookie richtlinie"$boost=11
+intitle:"informativa cookie"$boost=11
+intitle:"aviso cookies"$boost=11
+
+! ==============================================================================
+! BOOST: Universal Data Protection Detection
+! ==============================================================================
+inurl:data-protection$boost=11
+inurl:data_protection$boost=11
+inurl:dataprotection$boost=11
+inurl:data-privacy$boost=11
+inurl:gdpr$boost=11
+inurl:protection-donnees$boost=11
+inurl:proteccion-datos$boost=11
+inurl:protezione-dati$boost=11
+inurl:rgpd$boost=11
+inurl:dsgvo$boost=11
+
+intitle:"data protection"$boost=11
+intitle:"data privacy"$boost=11
+intitle:"gdpr"$boost=11
+intitle:"protection donnees"$boost=11
+intitle:"proteccion datos"$boost=11
+intitle:"protezione dati"$boost=11
+
+! ==============================================================================
+! BOOST: Universal Legal Document Detection
+! ==============================================================================
+inurl:legitimate-interest$boost=10
+inurl:transfer-impact$boost=10
+inurl:data-processing-agreement$boost=10
+inurl:standard-contractual-clauses$boost=10
+inurl:consent-form$boost=10
+inurl:lia$boost=10
+inurl:tia$boost=10
+inurl:dpa$boost=10
+inurl:scc$boost=10
+
+intitle:"legitimate interest"$boost=10
+intitle:"transfer impact"$boost=10
+intitle:"data processing agreement"$boost=10
+intitle:"standard contractual clauses"$boost=10
+intitle:"consent form"$boost=10
+
+! ==============================================================================
+! BOOST: File-Based Documents (Universal)
+! ==============================================================================
+*.pdf inurl:privacy$boost=12
+*.pdf inurl:cookie$boost=11
+*.pdf inurl:datenschutz$boost=12
+*.pdf inurl:confidentialite$boost=12
+*.pdf inurl:privacidad$boost=12
+*.pdf inurl:gdpr$boost=12
+*.pdf inurl:data-protection$boost=11
+*.doc inurl:privacy$boost=11
+*.docx inurl:privacy$boost=11
+
+! ==============================================================================
+! BOOST: Terms & Conditions with Privacy Clauses
+! ==============================================================================
+inurl:terms-and-conditions$boost=5
+inurl:terms-of-service$boost=5
+inurl:condiciones-servicio$boost=5
+inurl:conditions-generales$boost=5
+inurl:agb$boost=5
+inurl:regolamento$boost=5
+
+intitle:"terms and conditions"$boost=5
+intitle:"terms of service"$boost=5
+intitle:"condiciones servicio"$boost=5
+intitle:"conditions generales"$boost=5
+
+! ==============================================================================
+! BOOST: Content-Based Detection (Description Matching)
+! ==============================================================================
+indescription:"privacy policy"$boost=10
+indescription:"cookie policy"$boost=10
+indescription:"data protection"$boost=10
+indescription:"personal data"$boost=9
+indescription:"collect information"$boost=8
+indescription:"protect privacy"$boost=8
+indescription:"gdpr compliance"$boost=10
+indescription:"cookie notice"$boost=10
+indescription:"privacy notice"$boost=10
 ! ==============================================================================
 ! BOOST: Core Privacy Policies (strongest priority)
 ! ==============================================================================
