@@ -1,69 +1,133 @@
 ! name: Privacy Policy Finder
-! description: Prioritizes actual privacy policies and data protection documents while filtering out instructional content
-! public: true
-! author: Privacy Policy Hunter
+! description: Privately surfaces privacy policies, GDPR-related statements, LIAs, TIAs, DPAs, SCCs, consent forms and similar data-protection documents while filtering out instructional or marketing content
+! public: false
+! author: Privacy Policy Finder
 ! avatar: #2d5aa0
 
 ! ==============================================================================
-! BOOST: Privacy Policy and Data Protection Pages
+! BOOST: Core Privacy Policies (strongest priority)
 ! ==============================================================================
 
-! Privacy policy URL patterns
-/privacy-policy$boost=10
-/privacy_policy$boost=10
-/privacypolicy$boost=10
-/privacy-notice$boost=10
-/privacy_notice$boost=10
-/privacynotice$boost=10
-/privacy-statement$boost=10
-/privacy_statement$boost=10
-/privacystatement$boost=10
-/privacy$boost=8
+/privacy-policy$boost=12
+/privacy_policy$boost=12
+/privacypolicy$boost=12
+/privacy-notice$boost=12
+/privacy_notice$boost=12
+/privacynotice$boost=12
+/privacy-statement$boost=12
+/privacy_statement$boost=12
+/privacystatement$boost=12
 
-! Data protection and GDPR patterns
-/data-protection$boost=10
-/data_protection$boost=10
-/dataprotection$boost=10
-/gdpr$boost=9
-/data-privacy$boost=9
-/data_privacy$boost=9
-/dataprivacy$boost=9
+# Multilingual slugs
+/politica-de-privacidad$boost=12      # Spanish
+/politique-de-confidentialite$boost=12 # French
+/datenschutzerklarung$boost=12         # German
+/政治隐私声明$boost=12                         # Chinese (zh)
+/положение-о-конфиденциальности$boost=12    # Russian
+/informativa-privacy$boost=12          # Italian
+/privacyverklaring$boost=12            # Dutch
+/політика-конфіденційності$boost=12    # Ukrainian
+/politica-de-privacidade$boost=12      # Portuguese (PT/BR)
+/integritetspolicy$boost=12            # Swedish
+/privatlivspolitik$boost=12            # Danish
+/polityka-prywatnosci$boost=12         # Polish
+/プライバシーポリシー$boost=12                    # Japanese
 
-! Legal directories with privacy content
+! ==============================================================================
+! BOOST: Data-Protection & GDPR Documentation
+! ==============================================================================
+
+/data-protection$boost=11
+/data_protection$boost=11
+/dataprotection$boost=11
+/data-privacy$boost=11
+/data_privacy$boost=11
+/dataprivacy$boost=11
+/gdpr$boost=11
+/gdpr-statement$boost=11
+/gdpr_statement$boost=11
+/gdprnotice$boost=11
+/rgpd$boost=11
+/dsgvo$boost=11
+
+! ==============================================================================
+! BOOST: Assessments, Agreements & Clauses
+! ==============================================================================
+
+/legitimate-interest-assessment$boost=10
+/lia$boost=10
+/transfer-impact-assessment$boost=10
+/tia$boost=10
+/data-processing-agreement$boost=10
+/dpa$boost=10
+/standard-contractual-clauses$boost=10
+/scc$boost=10
+/model-clauses$boost=8
+/consent-form$boost=8
+/consent$boost=6
+
+! ==============================================================================
+! BOOST: File-Based Privacy Docs
+! ==============================================================================
+
+/privacy*.pdf$boost=12
+/privacy*.doc$boost=12
+/data*-protection*.pdf$boost=12
+/gdpr*.pdf$boost=12
+/*lia*.pdf$boost=11
+/*tia*.pdf$boost=11
+/*dpa*.pdf$boost=11
+/*scc*.pdf$boost=11
+
+! ==============================================================================
+! BOOST: Legal/Compliance Sections
+! ==============================================================================
+
 /legal/privacy$boost=10
 /legal/data-protection$boost=10
 /policies/privacy$boost=10
-/terms-and-policies/$boost=7
-/legal-info/$boost=7
-/legal/$boost=5
-
-! PDF privacy documents
-/privacy*.pdf$boost=10
-/data-protection*.pdf$boost=10
-/gdpr*.pdf$boost=10
-
-! Help pages with privacy content
-/help/privacy$boost=8
-/help/data$boost=7
-/help/settings$boost=6
+/compliance/privacy$boost=9
+/compliance/data-protection$boost=9
+/corporate/privacy$boost=9
+/terms-and-policies/$boost=8
+/legal-info/$boost=8
+/legal/$boost=6
 
 ! ==============================================================================
-! DISCARD: Educational Sites, Blogs, and Non-Policy Content
+! BOOST: Terms & Conditions (now helpful for data-protection clauses)
 ! ==============================================================================
 
-! Educational and informational sites
+/terms-and-conditions$boost=5
+/terms_of_service$boost=5
+/terms-of-service$boost=5
+/terms$boost=5
+/condiciones-de-servicio$boost=5        # ES
+/conditions-generales$boost=5           # FR
+/agb$boost=5                            # DE
+/regulamento-geral$boost=5              # PT
+/regolamento$boost=5                    # IT
+/regulamin$boost=5                      # PL
+
+! ==============================================================================
+! HELP & SETTINGS PAGES (moderate boost)
+! ==============================================================================
+
+/help/privacy$boost=6
+/help/data$boost=5
+/help/settings$boost=5
+
+! ==============================================================================
+! DISCARD: Educational, Blog, Social & Non-Policy Content
+! ==============================================================================
+
 $discard,site=wikipedia.org
 $discard,site=wikimedia.org
 $discard,site=fandom.com
-
-! Blog platforms and content sites
 $discard,site=medium.com
 $discard,site=substack.com
 $discard,site=wordpress.com
 $discard,site=blogger.com
 $discard,site=tumblr.com
-
-! News and magazine sites
 $discard,site=techcrunch.com
 $discard,site=theverge.com
 $discard,site=wired.com
@@ -71,8 +135,6 @@ $discard,site=arstechnica.com
 $discard,site=venturebeat.com
 $discard,site=zdnet.com
 $discard,site=cnet.com
-
-! Social platforms and forums
 $discard,site=reddit.com
 $discard,site=facebook.com
 $discard,site=twitter.com
@@ -82,96 +144,26 @@ $discard,site=stackexchange.com
 $discard,site=stackoverflow.com
 
 ! ==============================================================================
-! DOWNRANK: Instructional and Guide Content
+! DOWNRANK: Tutorials, Guides, Templates, Marketing & Generic Legal
 ! ==============================================================================
 
-! Tutorial and guide content patterns
-/how-to$downrank=8
-/guide$downrank=8
-/tutorial$downrank=8
-/getting-started$downrank=8
-/get-started$downrank=8
-/getting_started$downrank=8
-/get_started$downrank=8
-/beginner$downrank=8
-/basics$downrank=8
-/explained$downrank=5
-/understanding$downrank=5
-/what-is$downrank=5
-/introduction-to$downrank=5
-/learn$downrank=5
-/overview$downrank=5
-/summary$downrank=5
-
-! Support and documentation patterns
-/support/$downrank=5
-/docs/$downrank=8
-/documentation/$downrank=8
-/contact-us$downrank=8
-/about-us$downrank=5
-/resources/$downrank=5
-/downloads/$downrank=5
-/center/$downrank=5
-/hub/$downrank=5
-
-! Instructional content patterns
-/step-by-step$discard
-/steps$downrank=8
-/instructions$downrank=8
-/manual$downrank=8
-/handbook$downrank=8
-/playbook$downrank=8
-/checklist$downrank=8
-/tips$downrank=8
-/advice$downrank=8
-/best-practices$downrank=8
-/recommendations$downrank=8
-/guidelines$downrank=8
-
-! Blog and article patterns
-/blog/$discard
-/article/$downrank=8
-/post/$downrank=8
-/news/$downrank=8
-/press/$downrank=5
-/media/$downrank=5
-
-! FAQ and knowledge base
-/faq$discard
-/knowledge-base$discard
-/kb/$discard
+/how-to$downrank=9
+/guide$downrank=9
+/tutorial$downrank=9
+/getting-started$downrank=9
+/overview$downrank=6
+/summary$downrank=6
+/docs/$downrank=9
+/documentation/$downrank=9
+/template$downrank=6
+/example$downrank=6
+/sample$downrank=6
+/demo$downrank=6
+/marketing$downrank=6
+/advertising$downrank=6
+/legal-information$downrank=5
+/general-terms$downrank=5
 
 ! ==============================================================================
-! DOWNRANK: Commercial and Template Content
+! END
 ! ==============================================================================
-
-! Template and example content
-/template$downrank=5
-/example$downrank=5
-/sample$downrank=5
-/demo$downrank=5
-/test$downrank=5
-
-! Commercial content
-/affiliate$downrank=3
-/sponsored$downrank=3
-/advertisement$downrank=3
-
-! Generic legal information
-/legal-information$downrank=3
-/general-terms$downrank=3
-/terms-of-service$downrank=3
-/terms-and-conditions$downrank=3
-
-! SEO and marketing content
-/seo$downrank=5
-/marketing$downrank=5
-/advertising$downrank=5
-
-! ==============================================================================
-! BOOST: Legal and Compliance Content
-! ==============================================================================
-
-! Boost legal and compliance pages
-/compliance$boost=3
-/corporate/privacy$boost=8
