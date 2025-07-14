@@ -1,5 +1,5 @@
 ! name: Privacy Policy Finder
-! description: Privately surfaces privacy policies, GDPR-related statements, LIAs, TIAs, DPAs, SCCs, consent forms and similar data-protection documents while filtering out instructional or marketing content
+! description: Privately surfaces privacy, cookie-use, GDPR and other data-protection documents (DPA, SCC, LIA, TIA, consent, etc.) while filtering out tutorials or marketing pages
 ! public: false
 ! author: Privacy Policy Finder
 ! avatar: #2d5aa0
@@ -7,7 +7,6 @@
 ! ==============================================================================
 ! BOOST: Core Privacy Policies (strongest priority)
 ! ==============================================================================
-
 /privacy-policy$boost=12
 /privacy_policy$boost=12
 /privacypolicy$boost=12
@@ -18,42 +17,71 @@
 /privacy_statement$boost=12
 /privacystatement$boost=12
 
-# Multilingual slugs
-/politica-de-privacidad$boost=12      # Spanish
-/politique-de-confidentialite$boost=12 # French
-/datenschutzerklarung$boost=12         # German
-/政治隐私声明$boost=12                         # Chinese (zh)
-/положение-о-конфиденциальности$boost=12    # Russian
-/informativa-privacy$boost=12          # Italian
-/privacyverklaring$boost=12            # Dutch
-/політика-конфіденційності$boost=12    # Ukrainian
-/politica-de-privacidade$boost=12      # Portuguese (PT/BR)
-/integritetspolicy$boost=12            # Swedish
-/privatlivspolitik$boost=12            # Danish
-/polityka-prywatnosci$boost=12         # Polish
-/プライバシーポリシー$boost=12                    # Japanese
+# Multilingual slugs (native script)
+/politica-de-privacidad$boost=12          # ES
+/politique-de-confidentialite$boost=12    # FR
+/datenschutzerklarung$boost=12            # DE
+/политика-конфиденциальности$boost=12     # RU
+/政治隐私声明$boost=12                       # ZH
+/プライバシーポリシー$boost=12                # JA
+/개인정보처리방침$boost=12                     # KO
+/πολιτικη-απορρητου$boost=12                # EL
+
+# Major transliterations (Latin)
+/politika-konfidentsialnosti$boost=11      # RU → Latin
+/politiki-aporritou$boost=11               # EL → Latin
+/siyasa-khuliah$boost=11                   # AR (generic)
+
+/privacyverklaring$boost=12               # NL
+/polityka-prywatnosci$boost=12            # PL
+/politica-de-privacidade$boost=12         # PT
+/informativa-privacy$boost=12             # IT
+/privatlivspolitik$boost=12               # DA
+/integritetspolicy$boost=12               # SV
+/политика-приватности$boost=12            # SR-Cyr
+
+! ==============================================================================
+! BOOST: Cookie Policies & E-Privacy
+! ==============================================================================
+/cookie-policy$boost=11
+/cookie_policy$boost=11
+/cookiepolicy$boost=11
+/cookie-notice$boost=11
+/cookie_notice$boost=11
+/cookienotice$boost=11
+/cookie-use$boost=10
+/cookies$boost=9
+
+# Multilingual cookie slugs
+/politica-de-cookies$boost=11             # ES
+/politique-des-cookies$boost=11           # FR
+/cookie-richtlinie$boost=11               # DE
+/политика-cookie$boost=11                 # RU native
+/politika-cookie$boost=11                 # RU translit
+/쿠키-정책$boost=11                         # KO
+/クッキーポリシー$boost=11                    # JA
+/πολιτικη-cookie$boost=11                 # EL
+/cookiebekendtgorelse$boost=10            # DA translit
+
+/eprivacy$boost=10
+/e-privacy$boost=10
+/electronic-privacy$boost=9
+/telecommunicatie$boost=9                 # NL e-privacy law pages
 
 ! ==============================================================================
 ! BOOST: Data-Protection & GDPR Documentation
 ! ==============================================================================
-
 /data-protection$boost=11
 /data_protection$boost=11
 /dataprotection$boost=11
 /data-privacy$boost=11
-/data_privacy$boost=11
-/dataprivacy$boost=11
 /gdpr$boost=11
-/gdpr-statement$boost=11
-/gdpr_statement$boost=11
-/gdprnotice$boost=11
 /rgpd$boost=11
 /dsgvo$boost=11
 
 ! ==============================================================================
 ! BOOST: Assessments, Agreements & Clauses
 ! ==============================================================================
-
 /legitimate-interest-assessment$boost=10
 /lia$boost=10
 /transfer-impact-assessment$boost=10
@@ -67,59 +95,55 @@
 /consent$boost=6
 
 ! ==============================================================================
-! BOOST: File-Based Privacy Docs
+! BOOST: File-Based Privacy & Cookie Docs
 ! ==============================================================================
-
 /privacy*.pdf$boost=12
-/privacy*.doc$boost=12
-/data*-protection*.pdf$boost=12
-/gdpr*.pdf$boost=12
-/*lia*.pdf$boost=11
-/*tia*.pdf$boost=11
+/cookie*.pdf$boost=11
+/*gdpr*.pdf$boost=12
 /*dpa*.pdf$boost=11
 /*scc*.pdf$boost=11
+/*.doc$boost=10
+/*.docx$boost=10
 
 ! ==============================================================================
-! BOOST: Legal/Compliance Sections
+! BOOST: Legal / Compliance Sections
 ! ==============================================================================
-
 /legal/privacy$boost=10
+/legal/cookies$boost=10
 /legal/data-protection$boost=10
 /policies/privacy$boost=10
+/policies/cookies$boost=10
 /compliance/privacy$boost=9
-/compliance/data-protection$boost=9
+/compliance/cookies$boost=9
 /corporate/privacy$boost=9
 /terms-and-policies/$boost=8
 /legal-info/$boost=8
 /legal/$boost=6
 
 ! ==============================================================================
-! BOOST: Terms & Conditions (now helpful for data-protection clauses)
+! BOOST: Terms & Conditions (supporting clauses)
 ! ==============================================================================
-
 /terms-and-conditions$boost=5
-/terms_of_service$boost=5
 /terms-of-service$boost=5
 /terms$boost=5
-/condiciones-de-servicio$boost=5        # ES
-/conditions-generales$boost=5           # FR
-/agb$boost=5                            # DE
-/regulamento-geral$boost=5              # PT
-/regolamento$boost=5                    # IT
-/regulamin$boost=5                      # PL
+/condiciones-de-servicio$boost=5          # ES
+/conditions-generales$boost=5             # FR
+/agb$boost=5                              # DE
+/regolamento$boost=5                      # IT
+/regulamento-geral$boost=5                # PT
+/regulamin$boost=5                        # PL
 
 ! ==============================================================================
 ! HELP & SETTINGS PAGES (moderate boost)
 ! ==============================================================================
-
 /help/privacy$boost=6
+/help/cookies$boost=6
 /help/data$boost=5
 /help/settings$boost=5
 
 ! ==============================================================================
 ! DISCARD: Educational, Blog, Social & Non-Policy Content
 ! ==============================================================================
-
 $discard,site=wikipedia.org
 $discard,site=wikimedia.org
 $discard,site=fandom.com
@@ -146,11 +170,11 @@ $discard,site=stackoverflow.com
 ! ==============================================================================
 ! DOWNRANK: Tutorials, Guides, Templates, Marketing & Generic Legal
 ! ==============================================================================
-
 /how-to$downrank=9
 /guide$downrank=9
 /tutorial$downrank=9
 /getting-started$downrank=9
+/cookie-guide$downrank=9
 /overview$downrank=6
 /summary$downrank=6
 /docs/$downrank=9
