@@ -16,29 +16,24 @@
 /privacy-statement$boost=12
 /privacy_statement$boost=12
 /privacystatement$boost=12
-
-# Multilingual slugs (native script)
-/politica-de-privacidad$boost=12          # ES
-/politique-de-confidentialite$boost=12    # FR
-/datenschutzerklarung$boost=12            # DE
-/политика-конфиденциальности$boost=12     # RU
-/政治隐私声明$boost=12                       # ZH
-/プライバシーポリシー$boost=12                # JA
-/개인정보처리방침$boost=12                     # KO
-/πολιτικη-απορρητου$boost=12                # EL
-
-# Major transliterations (Latin)
-/politika-konfidentsialnosti$boost=11      # RU → Latin
-/politiki-aporritou$boost=11               # EL → Latin
-/siyasa-khuliah$boost=11                   # AR (generic)
-
-/privacyverklaring$boost=12               # NL
-/polityka-prywatnosci$boost=12            # PL
-/politica-de-privacidade$boost=12         # PT
-/informativa-privacy$boost=12             # IT
-/privatlivspolitik$boost=12               # DA
-/integritetspolicy$boost=12               # SV
-/политика-приватности$boost=12            # SR-Cyr
+/politica-de-privacidad$boost=12
+/politique-de-confidentialite$boost=12
+/datenschutzerklarung$boost=12
+/политика-конфиденциальности$boost=12
+/政治隐私声明$boost=12
+/プライバシーポリシー$boost=12
+/개인정보처리방침$boost=12
+/πολιτικη-απορρητου$boost=12
+/politika-konfidentsialnosti$boost=11
+/politiki-aporritou$boost=11
+/siyasa-khuliah$boost=11
+/privacyverklaring$boost=12
+/polityka-prywatnosci$boost=12
+/politica-de-privacidade$boost=12
+/informativa-privacy$boost=12
+/privatlivspolitik$boost=12
+/integritetspolicy$boost=12
+/политика-приватности$boost=12
 
 ! ==============================================================================
 ! BOOST: Cookie Policies & E-Privacy
@@ -51,22 +46,19 @@
 /cookienotice$boost=11
 /cookie-use$boost=10
 /cookies$boost=9
-
-# Multilingual cookie slugs
-/politica-de-cookies$boost=11             # ES
-/politique-des-cookies$boost=11           # FR
-/cookie-richtlinie$boost=11               # DE
-/политика-cookie$boost=11                 # RU native
-/politika-cookie$boost=11                 # RU translit
-/쿠키-정책$boost=11                         # KO
-/クッキーポリシー$boost=11                    # JA
-/πολιτικη-cookie$boost=11                 # EL
-/cookiebekendtgorelse$boost=10            # DA translit
-
+/politica-de-cookies$boost=11
+/politique-des-cookies$boost=11
+/cookie-richtlinie$boost=11
+/политика-cookie$boost=11
+/politika-cookie$boost=11
+/쿠키-정책$boost=11
+/クッキーポリシー$boost=11
+/πολιτικη-cookie$boost=11
+/cookiebekendtgorelse$boost=10
 /eprivacy$boost=10
 /e-privacy$boost=10
 /electronic-privacy$boost=9
-/telecommunicatie$boost=9                 # NL e-privacy law pages
+/telecommunicatie$boost=9
 
 ! ==============================================================================
 ! BOOST: Data-Protection & GDPR Documentation
@@ -75,7 +67,12 @@
 /data_protection$boost=11
 /dataprotection$boost=11
 /data-privacy$boost=11
+/data_privacy$boost=11
+/dataprivacy$boost=11
 /gdpr$boost=11
+/gdpr-statement$boost=11
+/gdpr_statement$boost=11
+/gdprnotice$boost=11
 /rgpd$boost=11
 /dsgvo$boost=11
 
@@ -126,12 +123,12 @@
 /terms-and-conditions$boost=5
 /terms-of-service$boost=5
 /terms$boost=5
-/condiciones-de-servicio$boost=5          # ES
-/conditions-generales$boost=5             # FR
-/agb$boost=5                              # DE
-/regolamento$boost=5                      # IT
-/regulamento-geral$boost=5                # PT
-/regulamin$boost=5                        # PL
+/condiciones-de-servicio$boost=5
+/conditions-generales$boost=5
+/agb$boost=5
+/regolamento$boost=5
+/regulamento-geral$boost=5
+/regulamin$boost=5
 
 ! ==============================================================================
 ! HELP & SETTINGS PAGES (moderate boost)
