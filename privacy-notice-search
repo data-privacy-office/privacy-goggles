@@ -1,8 +1,206 @@
 ! name: Privacy Policy Finder
-! description: Surfaces privacy, cookie, GDPR and other data-protection documents; filters tutorials and marketing pages
+! description: Privately surfaces privacy, cookie-use, GDPR and other data-protection documents (DPA, SCC, LIA, TIA, consent, etc.) while filtering out tutorials or marketing pages
 ! public: false
 ! author: Privacy Policy Finder
 ! avatar: #2d5aa0
+
+! ==============================================================================
+! BOOST: Universal Privacy Policy Detection (highest priority)
+! ==============================================================================
+/privacy-policy$boost=15
+/privacy_policy$boost=15
+/privacypolicy$boost=15
+/privacy-notice$boost=15
+/privacy-statement$boost=15
+/datenschutz$boost=15
+/confidentialite$boost=15
+/privacidad$boost=15
+/informativa-privacy$boost=15
+/privacyverklaring$boost=15
+/polityka-prywatnosci$boost=15
+/политика-конфиденциальности$boost=15
+/プライバシーポリシー$boost=15
+/개인정보처리방침$boost=15
+
+! ==============================================================================
+! BOOST: Universal Cookie Policy Detection
+! ==============================================================================
+/cookie-policy$boost=14
+/cookie_policy$boost=14
+/cookiepolicy$boost=14
+/cookie-notice$boost=14
+/cookies$boost=14
+/politica-cookies$boost=14
+/politique-cookies$boost=14
+/cookie-richtlinie$boost=14
+/informativa-cookie$boost=14
+/politica-cookie$boost=14
+/aviso-cookies$boost=14
+/クッキーポリシー$boost=14
+/쿠키-정책$boost=14
+
+! ==============================================================================
+! BOOST: Universal Data Protection Detection
+! ==============================================================================
+/data-protection$boost=14
+/data_protection$boost=14
+/dataprotection$boost=14
+/data-privacy$boost=14
+/gdpr$boost=14
+/protection-donnees$boost=14
+/proteccion-datos$boost=14
+/protezione-dati$boost=14
+/rgpd$boost=14
+/dsgvo$boost=14
+
+! ==============================================================================
+! BOOST: Universal Legal Document Detection
+! ==============================================================================
+/legitimate-interest$boost=13
+/transfer-impact$boost=13
+/data-processing-agreement$boost=13
+/standard-contractual-clauses$boost=13
+/consent-form$boost=13
+/lia$boost=13
+/tia$boost=13
+/dpa$boost=13
+/scc$boost=13
+
+! ==============================================================================
+! BOOST: File-Based Documents (Universal)
+! ==============================================================================
+*privacy*.pdf$boost=15
+*cookie*.pdf$boost=14
+*datenschutz*.pdf$boost=15
+*confidentialite*.pdf$boost=15
+*privacidad*.pdf$boost=15
+*gdpr*.pdf$boost=15
+*data-protection*.pdf$boost=14
+*privacy*.doc$boost=14
+*privacy*.docx$boost=14
+
+! ==============================================================================
+! BOOST: Terms & Conditions with Privacy Clauses
+! ==============================================================================
+/terms-and-conditions$boost=8
+/terms-of-service$boost=8
+/condiciones-servicio$boost=8
+/conditions-generales$boost=8
+/agb$boost=8
+/regolamento$boost=8
+
+! ==============================================================================
+! BOOST: Core Privacy Policies (strongest priority)
+! ==============================================================================
+/privacy-policy$boost=15
+/privacy_policy$boost=15
+/privacypolicy$boost=15
+/privacy-notice$boost=15
+/privacy_notice$boost=15
+/privacynotice$boost=15
+/privacy-statement$boost=15
+/privacy_statement$boost=15
+/privacystatement$boost=15
+/politica-de-privacidad$boost=15
+/politique-de-confidentialite$boost=15
+/datenschutzerklarung$boost=15
+/политика-конфиденциальности$boost=15
+/政治隐私声明$boost=15
+/プライバシーポリシー$boost=15
+/개인정보처리방침$boost=15
+/πολιτικη-απορρητου$boost=15
+/politika-konfidentsialnosti$boost=14
+/politiki-aporritou$boost=14
+/siyasa-khuliah$boost=14
+/privacyverklaring$boost=15
+/polityka-prywatnosci$boost=15
+/politica-de-privacidade$boost=15
+/informativa-privacy$boost=15
+/privatlivspolitik$boost=15
+/integritetspolicy$boost=15
+/политика-приватности$boost=15
+
+! ==============================================================================
+! BOOST: Cookie Policies & E-Privacy
+! ==============================================================================
+/cookie-policy$boost=14
+/cookie_policy$boost=14
+/cookiepolicy$boost=14
+/cookie-notice$boost=14
+/cookie_notice$boost=14
+/cookienotice$boost=14
+/cookie-use$boost=13
+/cookies$boost=12
+/politica-de-cookies$boost=14
+/politique-des-cookies$boost=14
+/cookie-richtlinie$boost=14
+/политика-cookie$boost=14
+/politika-cookie$boost=14
+/쿠키-정책$boost=14
+/クッキーポリシー$boost=14
+/πολιτικη-cookie$boost=14
+/cookiebekendtgorelse$boost=13
+/eprivacy$boost=13
+/e-privacy$boost=13
+/electronic-privacy$boost=12
+/telecommunicatie$boost=12
+
+! ==============================================================================
+! BOOST: Data-Protection & GDPR Documentation
+! ==============================================================================
+/data-protection$boost=14
+/data_protection$boost=14
+/dataprotection$boost=14
+/data-privacy$boost=14
+/data_privacy$boost=14
+/dataprivacy$boost=14
+/gdpr$boost=14
+/gdpr-statement$boost=14
+/gdpr_statement$boost=14
+/gdprnotice$boost=14
+/rgpd$boost=14
+/dsgvo$boost=14
+
+! ==============================================================================
+! BOOST: Assessments, Agreements & Clauses
+! ==============================================================================
+/legitimate-interest-assessment$boost=13
+/lia$boost=13
+/transfer-impact-assessment$boost=13
+/tia$boost=13
+/data-processing-agreement$boost=13
+/dpa$boost=13
+/standard-contractual-clauses$boost=13
+/scc$boost=13
+/model-clauses$boost=11
+/consent-form$boost=11
+/consent$boost=9
+
+! ==============================================================================
+! BOOST: File-Based Privacy & Cookie Docs
+! ==============================================================================
+/privacy*.pdf$boost=15
+/cookie*.pdf$boost=14
+/*gdpr*.pdf$boost=15
+/*dpa*.pdf$boost=14
+/*scc*.pdf$boost=14
+/*.doc$boost=13
+/*.docx$boost=13
+
+! ==============================================================================
+! BOOST: Legal / Compliance Sections
+! ==============================================================================
+/legal/privacy$boost=13
+/legal/cookies$boost=13
+/legal/data-protection$boost=13
+/policies/privacy$boost=13
+/policies/cookies$boost=13
+/compliance/privacy$boost=12
+/compliance/cookies$boost=12
+/corporate/privacy$boost=12
+/terms-and-policies/$boost=11
+/legal-info/$boost=11
+/legal/$boost=9
 
 ! ————————————————————————————————————————————————
 ! BOOST: BROAD PRIVACY-RELATED CONTENT (moderate priority)
@@ -172,6 +370,74 @@
 
 
 
-! (All previous high-priority, cookie, GDPR, file-based, discard and downrank
-! sections remain unchanged — none needed slash duplicates because they already
-! use exact paths or paired rules.)
+! ==============================================================================
+! BOOST: Terms & Conditions (supporting clauses)
+! ==============================================================================
+/terms-and-conditions$boost=8
+/terms-of-service$boost=8
+/terms$boost=8
+/condiciones-de-servicio$boost=8
+/conditions-generales$boost=8
+/agb$boost=8
+/regolamento$boost=8
+/regulamento-geral$boost=8
+/regulamin$boost=8
+
+! ==============================================================================
+! HELP & SETTINGS PAGES (moderate boost)
+! ==============================================================================
+/help/privacy$boost=9
+/help/cookies$boost=9
+/help/data$boost=8
+/help/settings$boost=8
+
+! ==============================================================================
+! DISCARD: Educational, Blog, Social & Non-Policy Content
+! ==============================================================================
+$discard,site=wikipedia.org
+$discard,site=wikimedia.org
+$discard,site=fandom.com
+$discard,site=medium.com
+$discard,site=substack.com
+$discard,site=wordpress.com
+$discard,site=blogger.com
+$discard,site=tumblr.com
+$discard,site=techcrunch.com
+$discard,site=theverge.com
+$discard,site=wired.com
+$discard,site=arstechnica.com
+$discard,site=venturebeat.com
+$discard,site=zdnet.com
+$discard,site=cnet.com
+$discard,site=reddit.com
+$discard,site=facebook.com
+$discard,site=twitter.com
+$discard,site=linkedin.com
+$discard,site=quora.com
+$discard,site=stackexchange.com
+$discard,site=stackoverflow.com
+
+! ==============================================================================
+! DOWNRANK: Tutorials, Guides, Templates, Marketing & Generic Legal
+! ==============================================================================
+/how-to$downrank=9
+/guide$downrank=9
+/tutorial$downrank=9
+/getting-started$downrank=9
+/cookie-guide$downrank=9
+/overview$downrank=6
+/summary$downrank=6
+/docs/$downrank=9
+/documentation/$downrank=9
+/template$downrank=6
+/example$downrank=6
+/sample$downrank=6
+/demo$downrank=6
+/marketing$downrank=6
+/advertising$downrank=6
+/legal-information$downrank=5
+/general-terms$downrank=5
+
+! ==============================================================================
+! END
+! ==============================================================================
