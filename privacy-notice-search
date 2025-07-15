@@ -3,6 +3,7 @@
 ! public: false
 ! author: Privacy Policy Finder
 ! avatar: #2d5aa0
+
 ! ==============================================================================
 ! BOOST: Universal Privacy Policy Detection (highest priority)
 ! ==============================================================================
@@ -201,6 +202,67 @@
 /legal-info/$boost=11
 /legal/$boost=9
 *privacy*/$boost=9
+
+! ==============================================================================
+! BOOST: BROAD PRIVACY-RELATED CONTENT (moderate priority)
+! ==============================================================================
+! English Privacy Terms
+*privacy*$boost=7
+*confidential*$boost=6
+*personal-data*$boost=6
+*data-subject*$boost=6
+*consent*$boost=6
+*opt-out*$boost=6
+*opt-in*$boost=6
+*third-party*$boost=5
+*tracking*$boost=5
+*analytics*$boost=5
+
+! GDPR & Data Protection Terms
+*gdpr*$boost=8
+*data-protection*$boost=7
+*controller*$boost=6
+*processor*$boost=6
+*lawful-basis*$boost=6
+*legitimate-interest*$boost=6
+*data-subject-rights*$boost=6
+*right-to-erasure*$boost=6
+*portability*$boost=6
+*breach*$boost=5
+
+! Information Security Terms
+*information-security*$boost=6
+*cybersecurity*$boost=6
+*data-security*$boost=6
+*encryption*$boost=5
+*security-policy*$boost=6
+*incident-response*$boost=5
+*vulnerability*$boost=5
+*compliance*$boost=5
+*audit*$boost=5
+*risk-assessment*$boost=5
+
+! Multilingual Broad Terms
+*datenschutz*$boost=7
+*donnees*$boost=6
+*datos*$boost=6
+*dati*$boost=6
+*gegevens*$boost=6
+*dados*$boost=6
+*данные*$boost=6
+*个人信息*$boost=6
+*プライバシー*$boost=6
+*개인정보*$boost=6
+
+! Cookie & Tracking Broad Terms
+*cookie*$boost=6
+*tracking*$boost=5
+*behavioral*$boost=5
+*advertising*$boost=4
+*marketing*$boost=4
+*preferences*$boost=4
+*settings*$boost=4
+*manage*$boost=4
 
 ! ==============================================================================
 ! BOOST: Terms & Conditions (supporting clauses)
