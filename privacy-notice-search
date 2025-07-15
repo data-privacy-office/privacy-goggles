@@ -166,7 +166,7 @@
 ! LEGAL / COMPLIANCE SECTIONS – updated slash variant
 ! ————————————————————————————————————————————————
 *privacy*/$boost=9
-*privacy*$boost=9   ! ensures no-slash pattern exists
+*privacy*$boost=9
 
 
 ! (All previous high-priority, cookie, GDPR, file-based, discard and downrank
